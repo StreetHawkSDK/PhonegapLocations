@@ -39,6 +39,10 @@
 		<hook type="after_plugin_install" src="src/ios/Script/enable_feature.js" />
 		<hook type="before_plugin_uninstall" src="src/ios/Script/disable_feature.js" />
 		
+		<!-- Plugin native SDK -->
+        <header-file src="src/ios/SDK/Location/Private/SHLocationBridge.h" />
+        <source-file src="src/ios/SDK/Location/Private/SHLocationBridge.m" />
+		
 	</platform>
 	<info>
 	 StreetHawk Locations plugin depends on StreetHawk core plugin. 
