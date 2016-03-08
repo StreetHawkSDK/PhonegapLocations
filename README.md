@@ -1,7 +1,7 @@
 # StreetHawk's Location Plugin
 
 ## Introduction
-The repository hosts Phonegap plugin of StreetHawk SDK's Locations module. The plugin is required if you wish to send push notifications to your application.
+The repository hosts Phonegap plugin of StreetHawk SDK's Locations module. The plugin is required if you wish to trace geo-location update of your App.
 
 ## Integration Steps
 Add Location plugin by running the below command.
@@ -17,7 +17,7 @@ cordova plugin add streethawkanalytics  --variable APP_KEY=<YOUR_APPLICATIONS_AP
 Replace YOUR_APPLICATIONS_APP_KEY with app_key registered with StreetHawk for your application and URL_SCHEME_OF_APP with deeplinking scheme of your application.
 
 ## Documentation
-Click [here](https://streethawk.freshdesk.com/solution/articles/5000680134) for detailed documentation of StreetHawk's Analytics plugin
+Click [here](https://streethawk.freshdesk.com/solution/articles/5000680134) for detailed documentation of StreetHawk's Locations plugin.
 
 ## Other StreetHawk Plugins
 * [Growth](https://github.com/StreetHawkSDK/PhonegapGrowth) for Viral and organic growth
