@@ -39,7 +39,6 @@
 {
     //initialise variables, move from SHApp's init.
     StreetHawk.isDefaultLocationServiceEnabled = YES;
-    StreetHawk.reportWorkHomeLocationOnly = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createLocationManagerHandler:) name:@"SH_LMBridge_CreateLocationManager" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startMonitorGeoLocationHandler:) name:@"SH_LMBridge_StartMonitorGeoLocation" object:nil];
@@ -102,7 +101,7 @@ typedef void (^RegularTaskCompletionHandler)(UIBackgroundFetchResult);
     {
         NSDictionary *dictLoc = @{@"lat": @(StreetHawk.locationManager.currentGeoLocation.latitude), @"lng": @(StreetHawk.locationManager.currentGeoLocation.longitude)};
         [StreetHawk sendLogForCode:LOG_CODE_LOCATION_MORE withComment:shSerializeObjToJson(dictLoc)];
-        [StreetHawk sendLogForCode:LOG_CODE_HEARTBEAT withComment:@"Heart beat." forAssocId:0 withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
+        [StreetHawk sendLogForCode:LOG_CODE_HEARTBEAT withComment:@"Heart beat." forAssocId:nil withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
          {
              if (needComplete && completionHandler != nil)
              {
@@ -114,7 +113,7 @@ typedef void (^RegularTaskCompletionHandler)(UIBackgroundFetchResult);
     }
     else if (needHeartbeatLog)  //only send heart beat
     {
-        [StreetHawk sendLogForCode:LOG_CODE_HEARTBEAT withComment:@"Heart beat." forAssocId:0 withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
+        [StreetHawk sendLogForCode:LOG_CODE_HEARTBEAT withComment:@"Heart beat." forAssocId:nil withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
          {
              if (needComplete && completionHandler != nil)
              {
@@ -127,7 +126,7 @@ typedef void (^RegularTaskCompletionHandler)(UIBackgroundFetchResult);
     else  //only send more location
     {
         NSDictionary *dictLoc = @{@"lat": @(StreetHawk.locationManager.currentGeoLocation.latitude), @"lng": @(StreetHawk.locationManager.currentGeoLocation.longitude)};
-        [StreetHawk sendLogForCode:LOG_CODE_LOCATION_MORE withComment:shSerializeObjToJson(dictLoc) forAssocId:0 withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
+        [StreetHawk sendLogForCode:LOG_CODE_LOCATION_MORE withComment:shSerializeObjToJson(dictLoc) forAssocId:nil withResult:100/*ignore*/ withHandler:^(NSObject *result, NSError *error)
          {
              if (needComplete && completionHandler != nil)
              {

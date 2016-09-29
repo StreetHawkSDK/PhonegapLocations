@@ -2,7 +2,7 @@
 <plugin id="com.streethawk.locations" version="1.8.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>StreetHawkLocations</name>
-	<description> StreetHawk SDK plugin for running user's location based campaigns</description>	    
+	<description>StreetHawk SDK plugin for running user's location based campaigns</description>	    
     <license>Apache 2.0</license>
     <keywords>push,messaging,deeplinking,referral,analytics,geofencing,beacons,marketing,automation,organic growth,feeds</keywords>
 		
