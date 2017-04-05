@@ -7,12 +7,16 @@
     <keywords>push,messaging,deeplinking,referral,analytics,geofencing,beacons,marketing,automation,organic growth,feeds</keywords>
 		
 	<platform name="android">
-		<framework src="com.google.android.gms:play-services-location:9.6.1" />
+
         <config-file parent="/*" target="res/xml/config.xml">
 			<feature name="locations">
 				<param name="android-package" value="com.streethawk.locations.locations"/>
 			</feature>
 		</config-file>
+		
+		<framework src="com.streethawk.phonegap:locations:1.8.5" />
+		<framework src="com.google.android.gms:play-services-location:10.2.1" />
+		
 		<config-file parent="/manifest" target="AndroidManifest.xml">
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -32,7 +36,9 @@
             </intent-filter>
         </receiver>
 		</config-file>  
+		<!--
 		<source-file src="src/android/streethawklocation.jar" target-dir="libs/"/>
+		-->
 	</platform>
 	<platform name="ios">
 		
