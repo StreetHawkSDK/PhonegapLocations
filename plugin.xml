@@ -13,8 +13,7 @@
 				<param name="android-package" value="com.streethawk.locations.locations"/>
 			</feature>
 		</config-file>
-		
-		<framework src="com.streethawk.phonegap:locations:1.8.5" />
+		<framework src="src/android/location.gradle" custom="true" type="gradleReference" />
 		<framework src="com.google.android.gms:play-services-location:10.2.1" />
 		
 		<config-file parent="/manifest" target="AndroidManifest.xml">
